@@ -9,7 +9,9 @@ import androidx.compose.ui.res.painterResource
 @Composable
 fun TopBar() {
     TopAppBar(
-        title = { Text(text = "Test") },
+        title = {
+                Icon(painter = painterResource(id = R.drawable.ic_baseline_menu_24), contentDescription = "menu" )
+        },
         backgroundColor = Color.Gray,
         contentColor = Color.White
 
@@ -36,12 +38,12 @@ fun BottomNavigationBar() {
                     )
                 },
                 label = { Text(text = item.title) },
-                selectedContentColor = Color.White,
-                unselectedContentColor = Color.Magenta,
+                selectedContentColor = Color.Gray,
+                unselectedContentColor = Color.White,
                 alwaysShowLabel = true,
                 selected = false,
                 onClick = {
-
+                    null
                 }
             )
             }
