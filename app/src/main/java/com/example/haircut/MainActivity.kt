@@ -52,6 +52,22 @@ fun MainScreen(services: ArrayList<Service>) {
     }
 }
 
+
+@Composable
+fun OfferCard() {
+    val padding = 20.dp
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(25),
+        content = {
+            Text(
+                modifier = Modifier.padding(padding),
+                text = "Accumulate points and get a special prize"
+            )
+        }
+    )
+}
+
 @Composable
 fun OurBarbersCard() {
     val imageUrl = "https://picsum.photos/200"
@@ -60,6 +76,7 @@ fun OurBarbersCard() {
     val imagePadding = 20.dp
     Card(
         modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(25),
         content = {
             Row(
                 modifier = Modifier.padding(rowPadding),
@@ -100,21 +117,6 @@ fun OurBarbersCard() {
 }
 
 @Composable
-fun OfferCard() {
-    val padding = 20.dp
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.medium,
-        content = {
-            Text(
-                modifier = Modifier.padding(padding),
-                text = "Accumulate points and get a special prize"
-            )
-        }
-    )
-}
-
-@Composable
 fun ServicesGrid(services: ArrayList<Service>) {
     val spaceBetweenItems = 10.dp
     val horizontalPadding = 20.dp
@@ -152,8 +154,9 @@ fun GridCellContents(service: Service) {
     Card(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Green),
-        shape = RoundedCornerShape(25)
+            .background(Color.White),
+        shape = RoundedCornerShape(25),
+        elevation = 1.dp
     ) {
         Box(
             modifier = Modifier
@@ -161,7 +164,7 @@ fun GridCellContents(service: Service) {
         ) {
             Column(
                 modifier = Modifier
-                    .background(Color.Cyan)
+                    .background(Color.Gray)
                     .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceEvenly,
