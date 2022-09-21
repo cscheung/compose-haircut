@@ -1,5 +1,6 @@
 package com.example.haircut
 
+import android.graphics.Paint.Align
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -61,14 +63,29 @@ fun MainScreen(services: ArrayList<Service>) {
 @Composable
 fun OfferCard() {
     val padding = 20.dp
+    val arrowIconSize = 20.dp
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth(),
         shape = RoundedCornerShape(25),
         content = {
-            Text(
-                modifier = Modifier.padding(padding),
-                text = "Accumulate points and get a special prize"
-            )
+            Box(
+                modifier = Modifier
+                    .background(colorResource(id = R.color.green_mint))
+                    .padding(padding)
+            ) {
+                Text(
+                    modifier = Modifier.padding(padding),
+                    text = "Accumulate points and get a special prize"
+                )
+                Icon(
+                    modifier = Modifier
+                        .align(Alignment.BottomEnd)
+                        .size(arrowIconSize),
+                    painter = painterResource(id = R.drawable.ic_baseline_arrow_circle_right_24),
+                    contentDescription = "arrow",
+                )
+            }
         }
     )
 }
