@@ -63,28 +63,27 @@ fun MainScreen(services: ArrayList<Service>) {
 @Composable
 fun OfferCard() {
     val padding = 20.dp
-    val arrowIconSize = 20.dp
+    val arrowIconSize = 30.dp
     Card(
-        modifier = Modifier
-            .fillMaxWidth(),
         shape = RoundedCornerShape(25),
         content = {
             Box(
                 modifier = Modifier
-                    .background(colorResource(id = R.color.green_mint))
                     .padding(padding)
             ) {
-                Text(
-                    modifier = Modifier.padding(padding),
-                    text = "Accumulate points and get a special prize"
-                )
-                Icon(
-                    modifier = Modifier
-                        .align(Alignment.BottomEnd)
-                        .size(arrowIconSize),
-                    painter = painterResource(id = R.drawable.ic_baseline_arrow_circle_right_24),
-                    contentDescription = "arrow",
-                )
+                Column() {
+                    Text(
+                        modifier = Modifier.padding(padding),
+                        text = "Accumulate points and get a special prize"
+                    )
+                    Icon(
+                        modifier = Modifier
+                            .align(Alignment.End)
+                            .size(arrowIconSize),
+                        painter = painterResource(id = R.drawable.ic_baseline_arrow_circle_right_24),
+                        contentDescription = "arrow",
+                    )
+                }
             }
         }
     )
