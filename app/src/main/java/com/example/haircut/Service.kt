@@ -5,5 +5,5 @@ import androidx.compose.ui.res.painterResource
 
 data class Service(
     val name: String,
-    val icon: Int = R.drawable.ic_baseline_remove_circle_24
+    val icon: Int = R.drawable.ic_baseline_content_cut_24
 )
