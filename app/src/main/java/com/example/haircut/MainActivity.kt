@@ -80,54 +80,62 @@ fun OurBarbers() {
     val rowPadding = 20.dp
     val imagePadding = 20.dp
     val titleFontSize = 30.sp
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween
+    Column(
+        modifier = Modifier
+            .fillMaxWidth(),
+        horizontalAlignment = Alignment.Start,
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = "Our Barbers",
             fontSize = titleFontSize
         )
-    }
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(25),
-        content = {
-            Row(
-                modifier = Modifier.padding(rowPadding),
-                horizontalArrangement = Arrangement.spacedBy(imagePadding)
-            ) {
-                AsyncImage(
-                    modifier = Modifier
-                        .size(imageSize)
-                        .clip(CircleShape),
-                    model = imageUrl,
-                    contentDescription = "barber"
-                )
-                AsyncImage(
-                    modifier = Modifier
-                        .size(imageSize)
-                        .clip(CircleShape),
-                    model = imageUrl,
-                    contentDescription = "barber"
-                )
-                AsyncImage(
-                    modifier = Modifier
-                        .size(imageSize)
-                        .clip(CircleShape),
-                    model = imageUrl,
-                    contentDescription = "barber"
-                )
-                AsyncImage(
-                    modifier = Modifier
-                        .size(imageSize)
-                        .clip(CircleShape),
-                    model = imageUrl,
-                    contentDescription = "barber"
-                )
-            }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(25),
+                content = {
+                    Row(
+                        modifier = Modifier.padding(rowPadding),
+                        horizontalArrangement = Arrangement.spacedBy(imagePadding)
+                    ) {
+                        AsyncImage(
+                            modifier = Modifier
+                                .size(imageSize)
+                                .clip(CircleShape),
+                            model = imageUrl,
+                            contentDescription = "barber"
+                        )
+                        AsyncImage(
+                            modifier = Modifier
+                                .size(imageSize)
+                                .clip(CircleShape),
+                            model = imageUrl,
+                            contentDescription = "barber"
+                        )
+                        AsyncImage(
+                            modifier = Modifier
+                                .size(imageSize)
+                                .clip(CircleShape),
+                            model = imageUrl,
+                            contentDescription = "barber"
+                        )
+                        AsyncImage(
+                            modifier = Modifier
+                                .size(imageSize)
+                                .clip(CircleShape),
+                            model = imageUrl,
+                            contentDescription = "barber"
+                        )
+                    }
+                }
+            )
         }
-    )
+    }
 
 }
 
